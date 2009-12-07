@@ -1,0 +1,5 @@
+RewriteRule ^(.*)$ dispatch.fcgi [QSA,L]
+RewriteCond %{DOCUMENT_ROOT}/system/maintenance.html -f
+RewriteCond %{SCRIPT_FILENAME} !maintenance.html
+RewriteCond %{SCRIPT_FILENAME} !^(.+).(gif|jpg|css|js|swf)$
+RewriteRule ^.*$ /system/maintenance.html [L]
