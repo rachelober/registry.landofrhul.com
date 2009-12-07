@@ -1,0 +1,21 @@
+<h1>Listing owners</h1>
+
+<%= will_paginate @owners, :inner_window => 10, :outer_window => 10 %>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Url</th>
+  </tr>
+
+<% @owners.each do |owner| %>
+  <tr>
+    <td><%= owner_display(owner) %></td>
+    <td><%=h owner.email %></td>
+    <td><%= link_to "#{h(owner.url)}", owner.url %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @owners, :inner_window => 10, :outer_window => 10 %>

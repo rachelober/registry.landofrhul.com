@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  leader: 1
+  url: MyString
+  status: 1
+
+two:
+  name: MyString
+  leader: 1
+  url: MyString
+  status: 1

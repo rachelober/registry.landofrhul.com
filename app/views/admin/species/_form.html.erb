@@ -1,0 +1,47 @@
+<% form_for([:admin, @species]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :plural %><br />
+    <%= f.text_field :plural %>
+  </p>
+  <p>
+    <%= f.label :group %><br />
+    <%= f.text_field :group %>
+  </p>
+  <p>
+    <%= f.label :prefix %><br />
+    <%= f.text_field :prefix %>
+  </p>
+  <p>
+    <%= f.label :stages %><br />
+    <%= f.text_field :stages %>
+  </p>
+  <p>
+    <%= f.label :max_members %><br />
+    <%= f.text_field :max_members %>
+  </p>
+  <p>
+    <%= f.label :max_females %><br />
+    <%= f.text_field :max_females %>
+  </p>
+  <p>
+    <%= f.label :max_males %><br />
+    <%= f.text_field :max_males %>
+  </p>
+  <p>
+    <%= f.label :min_females %><br />
+    <%= f.text_field :min_females %>
+  </p>
+  <p>
+    <%= f.label :min_males %><br />
+    <%= f.text_field :min_males %>
+  </p>
+  <p>
+    <%= f.submit button_name %>
+  </p>
+<% end %>

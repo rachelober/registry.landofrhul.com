@@ -1,0 +1,39 @@
+<h1>Listing groups</h1>
+
+<% @species.each do |species| %>
+<table>
+	<tr>
+		<th colspan="5"><%= h species.name %></th>
+	</tr>
+  <tr>
+    <th>Name</th>
+    <th>Leader</th>
+    <th>Url</th>
+    <th>Status</th>
+    <th>Owner</th>
+  </tr>
+
+	<% if species.groups.empty? %>
+	<tr>
+		<td colspan="5">None</td>
+	</tr>
+	<% else %>
+	<% species.groups.each do |group| %>
+  <tr>
+    <td><%= h group.name %></td>
+    <td><%= h group.leader.name %></td>
+    <td><%= h group.url %></td>
+    <td><%= h group.flags %></td>
+    <td><%= h group.owner.username %></td>
+		<td><%= link_to 'Show', [:admin, group] %></td>
+    <td><%= link_to 'Edit', edit_admin_group_path(group) %></td>
+    <td><%= link_to 'Destroy', [:admin, group], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+	<% end %>
+	<% end%>
+</table>
+<% end %>
+
+<br />
+
+<%= link_to 'New group', new_admin_group_path %>

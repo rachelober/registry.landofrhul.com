@@ -1,0 +1,21 @@
+<h1>Listing pets</h1>
+
+<table>
+  <tr>
+    <th>Pet ID#</th>
+    <th>Name</th>
+    <th>Lineage</th>
+    <th>Owner</th>
+		<th>URL</th>
+  </tr>
+
+<% @pets.each do |pet| %>
+  <tr>
+    <td><%= link_to "#{h(pet.regid)}", pet %></td>
+    <td><%= h pet.name %></td>
+    <td><%= pet_lineage(pet) %></td>
+    <td><%= owner_display(pet.owner) %></td>
+		<td><%= link_to "#{h(pet.name)}", pet.url %></td>
+  </tr>
+<% end %>
+</table>

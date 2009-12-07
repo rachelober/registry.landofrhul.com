@@ -1,0 +1,36 @@
+<h1><%= group_name(@group) %></h1>
+
+<p>
+  <b>Leader:</b>
+  <%= pet_display(@group.leader) %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= link_to "#{h(@group.url)}", @group.url %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @group.flags %>
+</p>
+
+<p>
+  <b>Species:</b>
+  <%=h @group.species.name %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%= owner_display(@group.owner) %>
+</p>
+
+<p>
+	<b>Members:</b>
+	<% @group.pets.each do |pet| %>
+	<br/>
+	<%= pet_display(pet) %>
+	<% end %>
+</p>
+
+<%= link_to 'Back', groups_path %>

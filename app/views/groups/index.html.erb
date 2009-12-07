@@ -1,0 +1,32 @@
+<h1>Listing groups</h1>
+
+<% @species.each do |species| %>
+<table>
+	<tr>
+		<th colspan="5"><%= h species.name %></th>
+	</tr>
+  <tr>
+    <th>Name</th>
+    <th>Leader</th>
+    <th>Url</th>
+    <th>Status</th>
+    <th>Owner</th>
+  </tr>
+
+	<% if species.groups.empty? %>
+	<tr>
+		<td colspan="5">None</td>
+	</tr>
+	<% else %>
+	<% species.groups.each do |group| %>
+  <tr>
+    <td><%= group_name(group) %></td>
+    <td><%= pet_display(group.leader) %></td>
+    <td><%= link_to "#{h(group.url)}", group.url %></td>
+    <td><%=h group.flags %></td>
+    <td><%= owner_display(group.owner) %></td>
+  </tr>
+	<% end %>
+	<% end%>
+</table>
+<% end %>

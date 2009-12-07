@@ -1,0 +1,27 @@
+<h1>Listing pets</h1>
+
+<table>
+  <tr>
+    <th>Pet ID#</th>
+    <th>Name</th>
+    <th>Lineage</th>
+    <th>Owner</th>
+		<th>URL</th>
+  </tr>
+
+<% @pets.each do |pet| %>
+  <tr>
+    <td><%= h pet.regid %></td>
+    <td><%= h pet.name %></td>
+    <td><%= pet_lineage(pet) %></td>
+    <td><%= h pet.owner.username %></td>
+		<td><%= link_to 'Show', [:admin, pet] %></td>
+    <td><%= link_to 'Edit', edit_admin_pet_path(pet) %></td>
+    <td><%= link_to 'Destroy', [:admin, pet], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New pet', new_admin_pet_path %>

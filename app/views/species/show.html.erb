@@ -1,0 +1,27 @@
+<h1><%=h @species.name %></h1>
+
+<%= will_paginate @pets, :inner_window => 10, :outer_window => 10 %>
+
+<table>
+  <tr>
+    <th>Pet ID#</th>
+    <th>Name &amp; URL</th>
+		<th>Gender</th>
+    <th>Lineage</th>
+    <th>Owner</th>
+  </tr>
+
+<% @pets.each do |pet| %>
+  <tr>
+    <td><%= link_to "#{h(pet.reg)}", pet %></td>
+		<td><%= pet_url_display(pet) %></td>
+		<td><%= h pet.gender %></td>
+    <td><%= pet_lineage(pet) %></td>
+    <td><%= owner_display(pet.owner) %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @pets, :inner_window => 10, :outer_window => 10 %>
+
+<%= link_to 'Back', species_path %>

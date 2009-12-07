@@ -1,0 +1,57 @@
+<h1><%=h @pet.name %></h1>
+
+<div class="petImage">
+	<%= image_tag "#{@pet.species.name}/#{@pet.reg}.gif" %>
+</div>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<td><%=h @pet.name %></td>
+	</tr>
+	<tr>
+		<th>ID#</th>
+		<td><%=h @pet.reg %></td>
+	</tr>
+	<tr>
+		<th>Species</th>
+		<td><%= h @pet.species.name %></td>
+	<tr>
+		<th>Age</th>
+		<td><%= h @pet.age %></td>
+	</tr>
+	<tr>
+		<th>Gender</th>
+		<td><%=h @pet.gender %></td>
+	</tr>
+	<tr>
+		<th>Lineage</th>
+		<td><%= pet_lineage(@pet) %></td>
+	</tr>
+	<tr>
+		<th>Birth <%= h @pet.species.group %></th>
+		<td><%= group_name(@pet.birth_group) %></td>
+	</tr>
+	<tr>
+		<th>Current <%= h @pet.species.group %></th>
+		<td><%= group_name(@pet.group) %></td>
+	</tr>
+	<tr>
+		<th>Genetics</th>
+		<td><%=h @pet.genetics %></td>
+	</tr>
+	<tr>
+		<th>Notes</th>
+		<td><%=h @pet.notes %></td>
+	</tr>
+	<tr>
+		<th>Owner</th>
+		<td><%= owner_display(@pet.owner) %></td>
+	</tr>
+	<tr>
+		<th>URL</th>
+		<td><%= link_to "#{h(@pet.url)}", @pet.url %></td>
+	</tr>
+</table>
+
+<%= link_to 'Back', pets_path %>

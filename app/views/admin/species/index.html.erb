@@ -1,0 +1,38 @@
+<h1>Listing species</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Plural</th>
+    <th>Group</th>
+    <th>Prefix</th>
+    <th>Stages</th>
+    <th>Max members</th>
+    <th>Max females</th>
+    <th>Max males</th>
+    <th>Min females</th>
+    <th>Min males</th>
+  </tr>
+
+<% @species.each do |species| %>
+  <tr>
+    <td><%=h species.name %></td>
+    <td><%=h species.plural %></td>
+    <td><%=h species.group %></td>
+    <td><%=h species.prefix %></td>
+    <td><%=h species.stages %></td>
+    <td><%=h species.max_members %></td>
+    <td><%=h species.max_females %></td>
+    <td><%=h species.max_males %></td>
+    <td><%=h species.min_females %></td>
+    <td><%=h species.min_males %></td>
+    <td><%= link_to 'Show', [:admin, species] %></td>
+    <td><%= link_to 'Edit', edit_admin_species_path(species) %></td>
+    <td><%= link_to 'Destroy', [:admin, species], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New species', new_admin_species_path %>

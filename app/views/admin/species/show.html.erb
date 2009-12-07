@@ -1,0 +1,50 @@
+<h1><%=h @species.name %></h1>
+
+<p>
+  <b>Plural:</b>
+  <%=h @species.plural %>
+</p>
+
+<p>
+  <b>Group:</b>
+  <%=h @species.group %>
+</p>
+
+<p>
+  <b>Prefix:</b>
+  <%=h @species.prefix %>
+</p>
+
+<p>
+  <b>Stages:</b>
+  <%=h @species.stages %>
+</p>
+
+<p>
+  <b>Max members:</b>
+  <%=h @species.max_members %>
+</p>
+
+<p>
+  <b>Max females:</b>
+  <%=h @species.max_females %>
+</p>
+
+<p>
+  <b>Max males:</b>
+  <%=h @species.max_males %>
+</p>
+
+<p>
+  <b>Min females:</b>
+  <%=h @species.min_females %>
+</p>
+
+<p>
+  <b>Min males:</b>
+  <%=h @species.min_males %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_species_path(@species) %> |
+<%= link_to 'Back', admin_species_index_path %>

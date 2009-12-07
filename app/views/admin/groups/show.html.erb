@@ -1,0 +1,30 @@
+<h1><%=h @group.name %></h1>
+
+<p>
+  <b>Leader:</b>
+  <%=h @group.leader.name %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @group.url %>
+</p>
+
+<p>
+  <b>Flags:</b>
+  <%=h @group.flags %>
+</p>
+
+<p>
+  <b>Species:</b>
+  <%=h @group.species.name %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%=h @group.owner.username %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_group_path(@group) %> |
+<%= link_to 'Back', admin_groups_path %>

@@ -1,0 +1,15 @@
+<h1><%=h @owner.username %></h1>
+
+<p>
+  <b>Email:</b>
+  <%=h @owner.email %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @owner.url %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_owner_path(@owner) %> |
+<%= link_to 'Back', admin_owners_path %>

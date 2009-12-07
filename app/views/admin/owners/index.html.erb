@@ -1,0 +1,28 @@
+<h1>Listing owners</h1>
+
+<%= will_paginate @owners, :inner_window => 10, :outer_window => 10 %>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Url</th>
+  </tr>
+
+<% @owners.each do |owner| %>
+  <tr>
+    <td><%=h owner.username %></td>
+    <td><%=h owner.email %></td>
+    <td><%=h owner.url %></td>
+    <td><%= link_to 'Show', [:admin, owner] %></td>
+    <td><%= link_to 'Edit', edit_admin_owner_path(owner) %></td>
+    <td><%= link_to 'Destroy', [:admin, owner], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @owners, :inner_window => 10, :outer_window => 10 %>
+
+<br />
+
+<%= link_to 'New owner', new_admin_owner_path %>

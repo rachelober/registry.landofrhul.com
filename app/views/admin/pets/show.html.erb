@@ -1,0 +1,60 @@
+<h1><%=h @pet.name %> (#<%=h @pet.reg %>)</h1><p>
+
+<p>
+  <b>Age:</b>
+  <%=h @pet.age %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%=h @pet.gender %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @pet.url %>
+</p>
+
+<p>
+  <b>Dam:</b>
+  <%=h @pet.dam.name %>
+</p>
+
+<p>
+  <b>Sire:</b>
+  <%=h @pet.sire.name %>
+</p>
+
+<p>
+  <b>Genetics:</b>
+  <%=h @pet.genetics %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%=h @pet.notes %>
+</p>
+
+<p>
+  <b>Group:</b>
+  <%=h @pet.group.name %>
+</p>
+
+<p>
+  <b>Group birth:</b>
+  <%=h @pet.birth_group.name %>
+</p>
+
+<p>
+  <b>Species:</b>
+  <%=h @pet.species.name %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%=h @pet.owner.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_pet_path(@pet) %> |
+<%= link_to 'Back', admin_pets_path %>

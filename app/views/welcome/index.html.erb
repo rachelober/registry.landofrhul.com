@@ -1,0 +1,48 @@
+<h1>Welcome</h1>
+<p>Welcome to the Rhul Registry. This website documents every single cyberpet 
+  issued by Bright Promise. We have a bunch of interesting features for you 
+  to browse.</p>
+<div class="index"> 
+  <table>
+    <tr>
+      <td width="106" class="indexicon">
+				<p><%= image_tag "pets.gif" %></p>
+			</td>
+      <td colspan="2" class="indexleft">
+				<h1><%= link_to "CyberPet List", pets_path %></h1>
+        <p>A registry of all pets ever adopted out. It includes such information 
+          like their ID#, name, lineage, and who they reside with now.
+				</p>
+			</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="indexright">
+				<h1><%= link_to "Owner List", owners_path %></h1>
+        <p>A complete list of people who have adopted from us along with contact 
+          information.</p>
+			</td>
+      <td width="295" class="indexicon">
+				<p><%= image_tag "owners.gif" %></p>
+			</td>
+    </tr>
+    <tr> 
+      <td class="indexicon">
+				<p><%= image_tag "species.gif" %></p>
+			</td>
+      <td colspan="2" class="indexleft">
+				<h1><%= link_to "Species List", species_index_path %></h1>
+        <p>Listing of all species available for browsing.</p>
+			</td>
+    </tr>
+    <tr> 
+      <td colspan="2" class="indexright">
+				<h1><%= link_to "Group List", groups_path %></h1>
+        <p>A detailed directory of all known species groups that are available 
+          for joining and ordering breedings from.</p>
+			</td>
+      <td class="indexicon">
+				<p><%= image_tag "groups.gif" %></p>
+			</td>
+    </tr>
+  </table>
+</div>

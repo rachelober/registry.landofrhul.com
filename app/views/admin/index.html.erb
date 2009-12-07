@@ -1,0 +1,32 @@
+<h1>Administration</h1>
+
+<ul>
+	<li><%= link_to "Owners", admin_owners_path %></li>
+	<li><%= link_to "Pets", admin_pets_path %></li>
+	<li><%= link_to "Species", admin_species_index_path %></li>
+	<li><%= link_to "Groups", admin_groups_path %></li>
+	<li><%= link_to "Stages", admin_stages_path %></li>
+</ul>
+
+<p>
+  <b>Broken Urls:</b>
+  <%=h @broken_url_pets.count %>
+</p>
+
+<p>
+  <b>Page Errors:</b>
+  <%=h @page_errors_pets.count %>
+</p>
+
+<p>
+  <b>No Links:</b>
+  <%=h @no_link_pets.count %>
+</p>
+
+<ul>
+<% @species.each do |species| %>
+	<li><%= link_to species.name, :controller => "admin/pets", :action=> "index", :species_id => species.id %></li>
+<% end %>
+</ul>
+
+<p>Take site down for maintenance</p>

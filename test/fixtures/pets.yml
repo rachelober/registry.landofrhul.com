@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  regid: MyString
+  name: MyString
+  age: 1
+  gender: MyString
+  url: MyString
+  dam_id: 1
+  sire_id: 1
+  genetics: MyString
+  notes: MyText
+  group_id: 1
+  group_birth_id: 1
+  species_id: 1
+  owner_id: 1
+
+two:
+  regid: MyString
+  name: MyString
+  age: 1
+  gender: MyString
+  url: MyString
+  dam_id: 1
+  sire_id: 1
+  genetics: MyString
+  notes: MyText
+  group_id: 1
+  group_birth_id: 1
+  species_id: 1
+  owner_id: 1

@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  plural: MyString
+  group: MyString
+  prefix: MyString
+  stages: MyString
+  max_members: 1
+  max_females: 1
+  max_males: 1
+  min_females: 1
+  min_males: 1
+
+two:
+  name: MyString
+  plural: MyString
+  group: MyString
+  prefix: MyString
+  stages: MyString
+  max_members: 1
+  max_females: 1
+  max_males: 1
+  min_females: 1
+  min_males: 1
