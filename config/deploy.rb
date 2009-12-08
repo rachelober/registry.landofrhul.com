@@ -8,6 +8,8 @@ set :applicationdir, "/home/#{user}/#{application}"  # The standard Dreamhost se
 # version control config
 set :scm_username, 'rachelober'
 set :scm_password, 'ramo1019'
+set :scm_command, "~/packages/bin/git" # updated version of git on  server in user directory
+set :local_scm_command, "/usr/local/git/bin/git" # correct path to local  git
 set :scm, 'git'
 set :repository, "git@github.com:rachelober/Rhul-Registry.git"
 set :deploy_via, :remote_cache
@@ -27,7 +29,7 @@ set :deploy_via, :export
 
 # additional settings
 default_run_options[:pty] = true  # Forgo errors when deploying from windows
-#ssh_options[:keys] = %w(/Path/To/id_rsa)            # If you are using ssh_keys
+ssh_options[:keys] = %w(/.ssh/id_rsa)  # If you are using ssh_keys
 set :chmod755, "app config db lib public vendor script script/* public/disp*"
 set :use_sudo, false
 
