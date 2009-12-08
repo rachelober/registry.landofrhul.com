@@ -10,7 +10,7 @@ class CreatePets < ActiveRecord::Migration
       t.integer :sire_id, :default => 0, :references => :pets
       t.string :genetics, :default => nil
       t.text :notes, :default => nil
-      t.integer, :default => 0
+      t.integer :flags, :default => 0
       t.integer :group_id, :default => 0, :references => :groups
       t.integer :group_birth_id, :default => 0, :references => :groups
       t.integer :species_id, :default => 0, :references => :species
