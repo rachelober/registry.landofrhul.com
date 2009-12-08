@@ -33,16 +33,15 @@ ssh_options[:keys] = %w(/.ssh/id_rsa)  # If you are using ssh_keys
 set :chmod755, "app config db lib public vendor script script/* public/disp*"
 set :use_sudo, false
 
-# If you are using Passenger mod_rails uncomment this:
-# if you're still using the script/reapear helper you will need
-# these http://github.com/rails/irs_process_scripts
-
-# namespace :deploy do
-#   task :start {}
-#   task :stop {}
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#   end
-# end
-
-
+#Passenger stop, start, and restart calls
+namespace :deploy do
+  desc "Restarting mod_rails with restart.txt"
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "touch #{current_path}/tmp/restart.txt"
+  end
+ 
+  [:start, :stop].each do |t|
+    desc "#{t} task is a no-op with mod_rails"
+    task t, :roles => :app do ; end
+  end
+end
