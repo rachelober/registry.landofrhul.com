@@ -20,11 +20,10 @@ test:
   timeout: 5000
 
 production:
-  development:
-    adapter: mysql
-    encoding: utf8
-    database: registry_production
-    username: brightpromise
-    password: 1l0i1l9y
-    host: mysql.landofrhul.com
-    port: 3306
+  adapter: mysql
+  encoding: utf8
+  database: registry_production
+  username: brightpromise
+  password: 1l0i1l9y
+  host: mysql.landofrhul.com
+  port: 3306
