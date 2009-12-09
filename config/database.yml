@@ -2,7 +2,7 @@ development:
   adapter: mysql
   database: registry_development
   username: root
-  password: ramo1019
+  password:
   host: localhost
   pool: 5
   timeout: 5000
@@ -14,7 +14,7 @@ test:
   adapter: mysql
   database: registry_test
   username: root
-  password: ramo1019
+  password: 
   host: localhost
   pool: 5
   timeout: 5000
@@ -23,7 +23,7 @@ production:
   adapter: mysql
   encoding: utf8
   database: registry_production
-  username: brightpromise
-  password: 1l0i1l9y
+  username:
+  password:
   host: mysql.landofrhul.com
   port: 3306
