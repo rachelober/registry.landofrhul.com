@@ -1,7 +1,7 @@
 <h1><%=h @pet.name %></h1>
 
 <div class="petImage">
-	<%= image_tag "#{@pet.species.name}/#{@pet.reg}.gif" %>
+	<%= image_tag "#{@pet.species.name.downcase}/#{@pet.reg}.gif" %>
 </div>
 
 <table>
