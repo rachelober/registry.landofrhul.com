@@ -52,6 +52,104 @@
 		<th>URL</th>
 		<td><%= link_to "#{h(@pet.url)}", @pet.url %></td>
 	</tr>
+	<tr>
+		<th colspan="2">Family Tree</th>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<table>
+				<tr>
+					<td rowspan="8">Self</td>
+					<td rowspan="4">
+						Sire<br/>
+						<%= pet_display(@pet.sire) %>
+					</td>
+					<td rowspan="2">
+						Grandsire<br/>
+						<%= pet_display(@pet.family_tree[1][1][0]) %>
+					</td>
+					<td>
+						Great-Grandsire<br/>
+						<%= pet_display(@pet.family_tree[1][1][1][0]) %>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Great-Granddam<br/>
+						<%= pet_display(@pet.family_tree[1][1][2][0]) %>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="2">
+						Granddam<br/>
+						<%= pet_display(@pet.family_tree[1][2][0]) %>
+					</td>
+					<td>
+						Great-Grandsire<br/>
+						<%= pet_display(@pet.family_tree[1][2][1][0]) %>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Great-Granddam<br/>
+						<%= pet_display(@pet.family_tree[1][2][2][0]) %>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="4">
+						Dam<br/>
+						<%= pet_display(@pet.dam) %>
+					</td>
+					<td rowspan="2">
+						Grandsire<br/>
+						<%= pet_display(@pet.family_tree[2][1][0]) %>
+					</td>
+					<td>
+						Great-Grandsire<br/>
+						<%= pet_display(@pet.family_tree[2][1][1][0]) %>
+					</td>
+				</tr>
+				<tr>
+					<td>Great-Granddam</td>
+				</tr>
+				<tr>
+					<td rowspan="2">Granddam</td>
+					<td>Great-Grandsire</td>
+				</tr>
+				<tr>
+					<td>Great-Granddam</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<th colspan="2">Siblings</th>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<% if @pet.siblings.empty? %>
+			None
+			<% else %>
+				<% @pet.siblings.each do |siblings| %>
+			<%= pet_display(siblings) %><br/>
+				<% end %>
+			<% end %>
+		</td>
+	</tr>
+	<tr>
+		<th colspan="2">Offspring</th>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<% if @pet.offspring.empty? %>
+			None
+			<% else %>
+				<% @pet.offspring.each do |offspring| %>
+			<%= pet_display(offspring) %><br/>
+				<% end %>
+			<% end %>
+		</td>
+	</tr>
 </table>
 
 <%= link_to 'Back', pets_path %>

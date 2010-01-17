@@ -1,7 +1,7 @@
 module PetsHelper
   def pet_lineage(pet)
     if Pet.exists?(pet)
-      return "#{h(pet_display(pet.sire))} X #{h(pet_display(pet.dam))}"
+      return "#{(pet_display(pet.sire))} X #{(pet_display(pet.dam))}"
     else
       return "Unknown"
     end

@@ -5,7 +5,13 @@ class Pet < ActiveRecord::Base
   belongs_to :species
   belongs_to :group
   belongs_to :birth_group, :class_name => 'Group', :foreign_key => 'group_birth_id'
-  
+  has_many :offspring, :class_name => 'Pet',   
+  :finder_sql => 'SELECT p.* FROM pets p ' +
+  ' WHERE p.species_id="#{species_id}" AND (p.dam_id = "#{id}" OR p.sire_id = "#{id}") ORDER BY name ASC'
+  has_many :siblings, :class_name => 'Pet',   
+  :finder_sql => 'SELECT p.* FROM pets p ' +
+  ' WHERE p.species_id="#{species_id}" AND (p.dam_id !="0" AND p.sire_id !="0") AND (p.dam_id = "#{dam_id}" OR p.sire_id = "#{sire_id}") ORDER BY name ASC'
+    
   has_flags [ :broken_url, :page_errors, :no_link ], [ :column => :flags ]
   
   validates_inclusion_of :gender, :in => %w{ "Male", "Female" }, :message => "should be 'male' or 'female'"
@@ -23,5 +29,23 @@ class Pet < ActiveRecord::Base
     id = reg.slice(2..4)
     species = Species.find_by_prefix(prefix)
     return pet = Pet.find(id, :conditions => ['species_id = ?', species])
+  end
+  
+  def family_tree
+    ft = [self]
+    
+    if self.sire.nil?
+      ft << nil
+    else
+      ft << self.sire.family_tree
+    end
+    
+    if self.dam.nil?
+      ft << nil
+    else
+      ft << self.dam.family_tree
+    end
+    
+    return ft
   end
 end
