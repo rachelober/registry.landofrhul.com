@@ -13,7 +13,8 @@ class PetsController < ApplicationController
   # GET /pets/1
   # GET /pets/1.xml
   def show
-    @pet = Pet.find(params[:id])
+    @species = Species.find_by_name(params[:species_name])
+    @pet = Pet.first(:conditions => ['species_id = ? AND regid = ?', @species.id, params[:regid]])
 
     respond_to do |format|
       format.html # show.html.erb

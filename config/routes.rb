@@ -1,7 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :species
 
-  map.resources :pets, :collection => { :species => :get }  
+  map.resources :pets, :collection => { :species => :get }
+  
+  map.species_pets 'species/:species_name/pets/:regid', :controller => 'pets', :action => 'show'
 
   map.resources :groups
 
