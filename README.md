@@ -2,7 +2,7 @@
 
 ## Copyright and License
 
-Copyright 2002 Rachel Ober
+Copyright 2009 Rachel Ober
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not
 this work except in compliance with the License. You may obtain a copy of th
@@ -17,5 +17,5 @@ specific language governing permissions and limitations under the License.
 
 ## Images Copyright and License
 
-Characters and images copyright 2002 to Rachel Ober, all rights
+Characters and images copyright 2009 to Rachel Ober, all rights
 reserved.
